@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ToDoList-最简单的待办事项列表</title>
+  <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+  <script type="text/javascript" src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+<header>
+<form action="" method="POST">
+  <label for="title">ToDoList</label>
+  <button id="btn" class="btn" type="submit">提交</button>
+  <input type="text" id="title" name="title" placeholder="添加ToDo">
+</form>
+</header>
+<section>
+  <h2>正在进行<span id="todocount"><%=tcount%></span></h2>
+  <ol id="todolist" class="demo-box"><%todoList.forEach(function(item){%>
+  <li><input type="checkbox" onchange="update(<%=item.id%>,true)"><p id="todo-<%=item.id%>" onclick="edit(<%=item.id%>,true)"><%=item.task%></p><a href="javascript:remove(<%=item.id%>, true)">-</a></li><%})%>
+  </ol>
+  <h2>已经完成<span id="donecount"><%=dcount%></span></h2>
+  <ul id="donelist"><%doneList.forEach(function(item){%>
+  <li><input type="checkbox" onchange="update(<%=item.id%>,false)" checked="checked"><p id="done-<%=item.id%>" onclick="edit(<%=item.id%>,false)"><%=item.task%></p><a href="javascript:remove(<%=item.id%>, false)">-</a></li>
+  <%})%></ul>
+</section>
+<footer>Copyright &copy 2017 <a href="javascript:clear()">clear</a></footer>
+<script type="text/javascript" src="/static/js/index.js"></script> 
+</body>
+</html>
