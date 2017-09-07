@@ -8,7 +8,7 @@ function updateMysql(id, from, to) {
 			to: to,
 			id: id
 		},
-		successs: res => {
+		success: res => {
 			if (!res.errno) {
 				window.location.reload();
 			} else alert(res.errmsg);
@@ -73,7 +73,7 @@ function remove(id, value) {
 			list: value ? "todo" : "done",
 			id: id
 		},
-		successs: res => {
+		success: res => {
 			if (!res.errno) {
 				window.location.reload();
 			} else alert(res.errmsg);
@@ -105,7 +105,7 @@ function edit(id, value) {
 						id: id,
 						title: newTitle
 					},
-					successs: res => {
+					success: res => {
 						if (!res.errno) {
 							window.location.reload();
 						} else alert(res.errmsg);
@@ -138,7 +138,7 @@ function edit(id, value) {
 						id: id,
 						title: newTitle
 					},
-					successs: res => {
+					success: res => {
 						if (!res.errno) {
 							window.location.reload();
 						} else alert(res.errmsg);
@@ -156,7 +156,7 @@ function clear() {
 		url: '/home/index/clear',
 		type: 'POST',
 		dateType: 'json',
-		successs: res => {
+		success: res => {
 			if (!res.errno) {
 				window.location.reload();
 			} else alert(res.errmsg);
